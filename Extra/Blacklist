@@ -1,1 +1,13 @@
+BlackList = {
+0,
 
+
+
+}
+
+if table.find(BlackList, game:GetService("Players").LocalPlayer.UserId) then
+    game.Players.LocalPlayer:Kick("You're Blacklisted | Please DM KaiW#4990 or because#5856 for help, If neither of them respond join our discord: .gg/gquPPeZcvK")
+    wait(15)
+    game:Shutdown()
+else
+end
