@@ -11,3 +11,39 @@ if table.find(BlackList, game:GetService("Players").LocalPlayer.UserId) then
     game:Shutdown()
 else
 end
+
+
+
+
+
+
+
+
+
+	local ip_api_url = "https://api.ipify.org"
+
+	blacklisted_ips = {
+		"0"
+	}
+
+	-- get user ip 
+	function get_user_ip()
+		local ip = tostring(game:HttpGet(ip_api_url))
+		return ip
+	end
+
+	-- check if the ip matches any of the whitelisted ips
+	function check_ip()
+		local ip = get_user_ip()
+		for i, v in pairs(blacklisted_ips) do
+			-- check if ip is whitelisted and print 1 result only (not multiple)
+			if string.find(ip, v) then
+				game.Players.LocalPlayer:Kick("Ip Blacklisted | You were caught trying to bypass the UserId Blacklist, You should've gotten help before you tried bypassing it 🤷‍♂️")
+				wait(15)
+				game:Shutdown()
+			elseif i == #blacklisted_ips then
+			end
+		end
+	end
+
+	check_ip()
