@@ -1,5 +1,5 @@
-        if game.Players.LocalPlayer:FindFirstChild("LuxeCommandsRemoteSpy") ~= nil then
-	game.Players.LocalPlayer.PlayerGui:FindFirstChild("LuxeCommandsRemoteSpy"):Destroy()
+if game.Players.LocalPlayer:FindFirstChild("LuxeCommandsRemoteSpy") ~= nil then
+game.Players.LocalPlayer.PlayerGui:FindFirstChild("LuxeCommandsRemoteSpy"):Destroy()
 end
 local LuxeCommandsRemoteSpy = Instance.new("ScreenGui")
 local Main = Instance.new("Frame")
