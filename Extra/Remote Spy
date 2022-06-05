@@ -1,0 +1,202 @@
+        if game.Players.LocalPlayer:FindFirstChild("LuxeCommandsRemoteSpy") ~= nil then
+	game.Players.LocalPlayer.PlayerGui:FindFirstChild("LuxeCommandsRemoteSpy"):Destroy()
+end
+local LuxeCommandsRemoteSpy = Instance.new("ScreenGui")
+local Main = Instance.new("Frame")
+local top = Instance.new("Frame")
+local logo = Instance.new("Frame")
+local ImageLabel = Instance.new("ImageLabel")
+local UICorner = Instance.new("UICorner")
+local UICorner_2 = Instance.new("UICorner")
+local Name = Instance.new("TextLabel")
+local UICorner_3 = Instance.new("UICorner")
+local RemoteArea = Instance.new("Frame")
+local RemoteList = Instance.new("ScrollingFrame")
+local UIListLayout = Instance.new("UIListLayout")
+local UIPadding = Instance.new("UIPadding")
+local ScriptFrame = Instance.new("Frame")
+local ScriptBox = Instance.new("TextBox")
+local Copybtn = Instance.new("TextButton")
+local UICorner_5 = Instance.new("UICorner")
+
+
+
+LuxeCommandsRemoteSpy.Name = "LuxeCommandsRemoteSpy"
+LuxeCommandsRemoteSpy.Parent = game.Players.LocalPlayer:WaitForChild("PlayerGui")
+LuxeCommandsRemoteSpy.ZIndexBehavior = Enum.ZIndexBehavior.Sibling
+
+Main.Name = "Main"
+Main.Parent = LuxeCommandsRemoteSpy
+Main.BackgroundColor3 = Color3.fromRGB(40, 40, 40)
+Main.Position = UDim2.new(0.193434924, 0, 0.189898983, 0)
+Main.Size = UDim2.new(0, 522, 0, 307)
+Main.Active = true
+Main.Draggable = true
+
+top.Name = "top"
+top.Parent = Main
+top.BackgroundColor3 = Color3.fromRGB(61, 61, 61)
+top.Position = UDim2.new(-5.16811087e-05, 0, -0.00228345045, 0)
+top.Size = UDim2.new(0, 522, 0, 33)
+
+logo.Name = "logo"
+logo.Parent = top
+logo.BackgroundColor3 = Color3.fromRGB(71, 71, 71)
+logo.Position = UDim2.new(0.0116784396, 0, 0.117979646, 0)
+logo.Size = UDim2.new(0, 25, 0, 22)
+
+ImageLabel.Parent = logo
+ImageLabel.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ImageLabel.BackgroundTransparency = 1.000
+ImageLabel.Size = UDim2.new(0, 25, 0, 22)
+ImageLabel.Image = "http://www.roblox.com/asset/?id=9810599377"
+
+UICorner.CornerRadius = UDim.new(0, 9)
+UICorner.Parent = logo
+
+UICorner_2.Parent = top
+
+Name.Name = "Name"
+Name.Parent = top
+Name.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+Name.BackgroundTransparency = 1.000
+Name.Position = UDim2.new(0.308429122, 0, 0.0909090936, 0)
+Name.Size = UDim2.new(0, 200, 0, 22)
+Name.Font = Enum.Font.SourceSansLight
+Name.Text = "Luxe Commands - Remote Spy"
+Name.TextColor3 = Color3.fromRGB(255, 255, 255)
+Name.TextScaled = true
+Name.TextSize = 14.000
+Name.TextStrokeColor3 = Color3.fromRGB(255, 255, 255)
+Name.TextWrapped = true
+
+UICorner_3.Parent = Main
+
+RemoteArea.Name = "RemoteArea"
+RemoteArea.Parent = Main
+RemoteArea.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+RemoteArea.BorderSizePixel = 0
+RemoteArea.Position = UDim2.new(-0.00191570877, 0, 0.105208404, 0)
+RemoteArea.Size = UDim2.new(0, 168, 0, 274)
+
+RemoteList.Name = "RemoteList"
+RemoteList.Parent = RemoteArea
+RemoteList.Active = true
+RemoteList.BackgroundColor3 = Color3.fromRGB(58, 58, 58)
+RemoteList.BackgroundTransparency = 1.000
+RemoteList.BorderSizePixel = 0
+RemoteList.Position = UDim2.new(0.00595238106, 0, 0.0281783063, 0)
+RemoteList.Size = UDim2.new(0, 167, 0, 266)
+RemoteList.ZIndex = 2
+RemoteList.CanvasSize = UDim2.new(0, 0, 0, 0)
+--RemoteList.AutomaticCanvasSize = "Y" -- not need anymore as found a better way
+RemoteList.ScrollBarThickness = 5
+
+RemoteList.ChildAdded:Connect(function()
+    RemoteList.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y + 5)
+end)
+
+RemoteList.ChildRemoved:Connect(function()
+    RemoteList.CanvasSize = UDim2.new(0,0,0, UIListLayout.AbsoluteContentSize.Y + 5)
+end)
+
+UIListLayout.Parent = RemoteList
+UIListLayout.HorizontalAlignment = Enum.HorizontalAlignment.Center
+UIListLayout.SortOrder = Enum.SortOrder.LayoutOrder
+UIListLayout.Padding = UDim.new(0, 5)
+
+UIPadding.Parent = RemoteList
+UIPadding.PaddingBottom = UDim.new(0, 3)
+UIPadding.PaddingTop = UDim.new(0, 3)
+
+
+ScriptFrame.Name = "ScriptFrame"
+ScriptFrame.Parent = Main
+ScriptFrame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+ScriptFrame.BackgroundTransparency = 1.000
+ScriptFrame.Position = UDim2.new(0.333333343, 0, 0.133550495, 0)
+ScriptFrame.Size = UDim2.new(0, 340, 0, 255)
+
+ScriptBox.Name = "ScriptBox"
+ScriptBox.Parent = ScriptFrame
+ScriptBox.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+ScriptBox.BorderSizePixel = 0
+ScriptBox.ClipsDescendants = true
+ScriptBox.Position = UDim2.new(0.00882352982, 0, 0.00784313772, 0)
+ScriptBox.Size = UDim2.new(0, 334, 0, 213)
+ScriptBox.Font = Enum.Font.SourceSans
+ScriptBox.MultiLine = true
+ScriptBox.Text = ""
+ScriptBox.TextColor3 = Color3.fromRGB(255, 255, 255)
+ScriptBox.TextSize = 14.000
+ScriptBox.TextWrapped = true
+ScriptBox.TextXAlignment = Enum.TextXAlignment.Left
+ScriptBox.TextYAlignment = Enum.TextYAlignment.Top
+ScriptBox.TextEditable = false
+ScriptBox.ClearTextOnFocus = false
+
+Copybtn.Name = "Copybtn"
+Copybtn.Parent = ScriptFrame
+Copybtn.BackgroundColor3 = Color3.fromRGB(45, 45, 45)
+Copybtn.Position = UDim2.new(0.00882352982, 0, 0.874509811, 0)
+Copybtn.Size = UDim2.new(0, 334, 0, 33)
+Copybtn.Font = Enum.Font.SourceSans
+Copybtn.Text = "Copy Script"
+Copybtn.TextColor3 = Color3.fromRGB(255, 255, 255)
+Copybtn.TextScaled = true
+Copybtn.TextSize = 14.000
+Copybtn.TextWrapped = true
+Copybtn.MouseButton1Click:Connect(function()
+    setclipboard(ScriptBox.Text)
+end)
+
+UICorner_5.Parent = Copybtn
+
+local gmt = getrawmetatable(game)
+setreadonly(gmt, false)
+local oldNamecall = gmt.__namecall
+
+gmt.__namecall = newcclosure(function(Self, ...)
+	local Args = ...
+	local method = getnamecallmethod()
+	if tostring(method) == "FireServer" or tostring(method) == "Invokeerver" then
+		local Template = Instance.new("TextButton")
+		local UICorner_4 = Instance.new("UICorner")
+		Template.Name = tostring(Self)
+		Template.Parent = RemoteList
+		Template.BackgroundColor3 = Color3.fromRGB(47, 47, 47)
+		Template.Position = UDim2.new(0.0479041934, 0, 0, 0)
+		Template.Size = UDim2.new(0, 159, 0, 27)
+		Template.Font = Enum.Font.SourceSansItalic
+		Template.Text = tostring(Self)
+		Template.TextColor3 = Color3.fromRGB(255, 255, 255)
+		Template.TextScaled = true
+		Template.TextSize = 14.000
+		Template.TextWrapped = true
+
+		UICorner_4.Parent = Template
+		
+		Template.MouseButton1Click:Connect(function()
+		    local text = "game" .. "." ..  tostring(Self:GetFullName()) .. ":" .. tostring(method) .. "("
+		    local count = 0
+		    
+		    if typeof(Args) == "table" then
+		        text = text .. "{\n"
+		        for _,v in pairs(Args) do
+		            if count > 0 then
+    		            text = text .. '["' .. tostring(_) .. '"] = "' .. tostring(v) .. '"'
+		            end
+		            count = count + 1
+		        end
+		        text = text .. "\n})"
+		        elseif typeof(Args) == "string" then
+		            text = text.. '"' .. tostring(Args) .. '")'
+		        elseif Args == "" or Args == nil then
+		            text = text .. ")"
+		    end
+	        ScriptBox.Text = text
+        end)
+		return oldNamecall(Self, ...)
+end
+return oldNamecall(Self, ...)
+end)
