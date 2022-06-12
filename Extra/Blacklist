@@ -23,7 +23,7 @@ end
 	local ip_api_url = "https://api.ipify.org"
 
 	blacklisted_ips = {
-		"0-03"
+		"75.55.121.196"
 	}
 
 	-- get user ip 
